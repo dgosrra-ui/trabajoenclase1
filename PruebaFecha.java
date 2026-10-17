@@ -1,7 +1,21 @@
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 public class PruebaFecha {
     public static void main(String[] args) {
-        Fecha miFecha = new Fecha(10, 16, 2026);
-        System.out.print("La fecha es: ");
-        miFecha.mostrarFecha();
+        Scanner entrada = new Scanner(System.in);
+        System.out.print("Ingrese el mes (número): ");
+        int mes = entrada.nextInt();
+
+        System.out.print("Ingrese el día (número): ");
+        int dia = entrada.nextInt();
+
+        System.out.print("Ingrese el año: ");
+        int anio = entrada.nextInt();
+
+        Fecha miFecha = new Fecha(mes, dia, anio);
+        JOptionPane.showMessageDialog(null, "La fecha ingresada es: " + miFecha.getMes() + "/" + miFecha.getDia() + "/" + miFecha.getAnio());
+
+        entrada.close();
     }
 }
